@@ -6,7 +6,37 @@
     color: red;
 }
 
-.fizz .buzz .fizzbuzz {
+.fizz {
     width: 100px;
     height: 100px;
+    background-color: red;
+    text-align: center;
+    ;
+}
+
+.buzz {
+    width: 100px;
+    height: 100px;
+    background-color: seagreen;
+}
+
+.fizzbuzz {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+}
+
+.number {
+    width: 100px;
+    height: 100px;
+    background-color: slategray;
+}
+
+#fizzbuzz-cont {
+    background-color: sandybrown;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
 }
