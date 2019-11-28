@@ -7,38 +7,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fizzbuzz page</title>
     <link rel="stylesheet" href="styles/fizzbuzz.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i&display=swap" rel="stylesheet">
     <script src="scripts/fizzbuzz.js" defer></script>
 </head>
 
 <body>
     <div class="head" id="head">
-        <h3>Welcome to</h3>
-        <h1>FIZZ-BUZZ</h1>
-        <h2>The App of Numbers</h2>
+        <div class="welcome">
+            <h3>Welcome to </h3>
+            <h1 id="brand"><em>FIZZ-BUZZ</em></h1>
+            <h2>The App of Numbers</h2>
+        </div>
     </div>
-    <hr>
+    <div class="main-cont">
+        <div class="numInput">
+            <h3>Enter Your Fizz-Buzz Range Numbers</h3>
+            <div class="range" id="rangeBtn">
+                <span>Range START: </span>
+                <input type="number" name="Starting number" id="start-num" value="1"><br>
+                <span>Range END: </span>
+                <input type="number" name="End number" id="end-num" value="100">
+            </div>
+            <h3>Enter Your Custom FIZZ and BUZZ values</h3>
+            <div class="values">
+                <span>FIZZ Value: </span>
+                <input type="number" id="fizz-value" value="3"><br>
+                <span>BUZZ Value: </span>
+                <input type="number" id="buzz-value" value="5">
+            </div>
+            <div class="generateBtn">
+                <button id="generate">GENERATE</button>
+            </div>
 
-    <div class="numInput">
-        <h3>Enter Your Fizz-Buzz Numbers</h3>
-        <input type="number" name="Starting number" id="start-num" value="1">
-        <input type="number" name="End number" id="end-num" value="100">
-        <button id="generate">GENERATE</button>
+
+        </div>
+
+        <div class="buttons">
+            <button id="btn1">CLEAR</button><br>
+            <button id="btn2">RESTART</button><br>
+            <button id="btn3">FIZZ</button><br>
+            <button id="btn4">BUZZ</button><br>
+            <button id="btn5">FIZZ-BUZZ</button><br>
+        </div>
+        <div class="" id="warningMsg"></div>
+        <br>
+
+
+        <div class="fizzbuzz-cont" id="fizzbuzz-cont">
+
+        </div>
+        <footer>
+            <p>&copy; Edžus Kašs</p>
+        </footer>
     </div>
-
-    <div class="buttons">
-        <button id="btn1">CLEAR</button>
-        <button id="btn2">RESTART</button>
-        <button id="btn3">FIZZ</button>
-        <button id="btn4">BUZZ</button>
-        <button id="btn5">FIZZ-BUZZ</button>
-    </div>
-    <br>
-
-
-    <div class="fizzbuzz-cont" id="fizzbuzz-cont">
-
-    </div>
-
 </body>
 
 </html>

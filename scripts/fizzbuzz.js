@@ -11,55 +11,54 @@ const fizzBtn = document.getElementById("btn3");
 const buzzBtn = document.getElementById("btn4");
 const fizzbuzzBtn = document.getElementById("btn5");
 const buttons = document.querySelector(".buttons");
+const warningMsg = document.getElementById("warningMsg")
+const fizzValue = document.getElementById("fizz-value");
+const buzzValue = document.getElementById("buzz-value");
 
-
+//  FUNCTION FOR CLEARING WARNING MESSAGE AND GENERATED DIVS
 function clearCont() {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+    while (warningMsg.firstChild) {
+        warningMsg.removeChild(warningMsg.firstChild);
+    }
 }
 
-// WARNING MESSAGE
-const warning = document.createElement("p");
-warning.setAttribute("id", "warning");
-warning.innerText = "Warning! Number range is between 1 and 100. Second number can't be smaller than first number";
 
-// function clearWarn() {
-//     let node = document.getElementById("warning");
-//     if (node.parentNode) {
-//         node.parentNode.removeChild(node);
-//     }
-// }
-
+// FUNCTION FOR GENERATING DIVS
 function genDivs() {
     for (let i = parseInt(firstNum.value); i <= parseInt(secondNum.value); i++) {
         let fN = parseInt(firstNum.value);
         let sN = parseInt(secondNum.value);
-        // console.log("First num is:" + fN + " Second num is " + sN);
-
-
+        let fV = parseInt(fizzValue.value);
+        let bV = parseInt(buzzValue.value);
 
         const numDiv = document.createElement("div")
 
         if (sN < fN || sN > 100 || fN <= 0 || sN <= 0) {
-            buttons.appendChild(warning);
+            // WARNING MESSAGE
+            const warning = document.createElement("p");
+            warning.setAttribute("id", "warning");
+            warning.innerText = "Warning! Number range must be between 1 and 100. Second number can't be smaller than first number";
+            warningMsg.appendChild(warning);
             break;
-        } else if (i % 3 == 0 && i % 5 == 0) {
+        } else if (i % fV == 0 && i % bV == 0) {
             container.appendChild(numDiv);
             numDiv.innerText = i + " = FIZZ-BUZZ";
-            numDiv.setAttribute("class", "fizzbuzz");
-        } else if (i % 3 == 0) {
+            numDiv.setAttribute("class", "fizzbuzz alldivs");
+        } else if (i % fV == 0) {
             container.appendChild(numDiv);
             numDiv.innerText = i + " = FIZZ";
-            numDiv.setAttribute("class", "fizz");
-        } else if (i % 5 == 0) {
+            numDiv.setAttribute("class", "fizz alldivs");
+        } else if (i % bV == 0) {
             container.appendChild(numDiv);
             numDiv.innerText = i + " = BUZZ";
-            numDiv.setAttribute("class", "buzz");
+            numDiv.setAttribute("class", "buzz alldivs");
         } else {
             container.appendChild(numDiv);
             numDiv.innerText = i;
-            numDiv.setAttribute("class", "number")
+            numDiv.setAttribute("class", "number alldivs")
         }
     }
 
@@ -73,63 +72,38 @@ gen.onclick = () => {
 
     clearCont();
     genDivs();
-    // clearWarn();
-
-    // for (let i = parseInt(firstNum.value); i <= parseInt(secondNum.value); i++) {
-    //     let fN = parseInt(firstNum.value);
-    //     let sN = parseInt(secondNum.value);
-    //     // console.log("First num is:" + fN + " Second num is " + sN);
-
-
-
-    //     const numDiv = document.createElement("div")
-
-    //     if (sN < fN || sN > 100 || fN < 0 || sN < 0) {
-    //         head.appendChild(warning);
-    //         break;
-    //     } else if (i % 3 == 0 && i % 5 == 0) {
-    //         container.appendChild(numDiv);
-    //         numDiv.innerText = i + " = FIZZ-BUZZ";
-    //         numDiv.setAttribute("class", "fizzbuzz");
-    //     } else if (i % 3 == 0) {
-    //         container.appendChild(numDiv);
-    //         numDiv.innerText = i + " = FIZZ";
-    //         numDiv.setAttribute("class", "fizz");
-    //     } else if (i % 5 == 0) {
-    //         container.appendChild(numDiv);
-    //         numDiv.innerText = i + " = BUZZ";
-    //         numDiv.setAttribute("class", "buzz");
-    //     } else {
-    //         container.appendChild(numDiv);
-    //         numDiv.innerText = i;
-    //         numDiv.setAttribute("class", "number")
-    //     }
-    // }
 }
 
 // CLEAR AND RESTART BUTTONS
 clearBtn.onclick = () => {
+    console.log("Clearing all divs");
     clearCont();
-    firstNum.value = null;
-    secondNum.value = null;
+    console.log("Resetting range values");
+    firstNum.value = 1;
+    secondNum.value = 100;
 }
 
 restartBtn.onclick = () => {
+    console.log("Clearing all divs");
     clearCont();
+    console.log("Resetting values");
     firstNum.value = 1;
     secondNum.value = 100;
+    fizzValue.value = 3;
+    buzzValue.value = 5;
+    console.log("Generating default divs")
     genDivs();
 
 }
 
-// FIZZ, BUZZ and FIZZBUZZ BUTTONS
+// FIZZ, BUZZ and FIZZBUZZ SORTING BUTTONS
 fizzBtn.onclick = () => {
     console.log("Showing only FIZZ numbers");
     for (let el of document.querySelectorAll('div.buzz, div.fizzbuzz, div.number')) {
         el.style.display = 'none';
     }
     for (let el of document.querySelectorAll("div.fizz")) {
-        el.style.display = "block";
+        el.style.display = "flex";
     }
 }
 buzzBtn.onclick = () => {
@@ -138,7 +112,7 @@ buzzBtn.onclick = () => {
         el.style.display = 'none';
     }
     for (let el of document.querySelectorAll("div.buzz")) {
-        el.style.display = "block";
+        el.style.display = "flex";
     }
 }
 fizzbuzzBtn.onclick = () => {
@@ -147,8 +121,7 @@ fizzbuzzBtn.onclick = () => {
         el.style.display = 'none';
     }
     for (let el of document.querySelectorAll("div.fizzbuzz")) {
-        el.style.display = "block";
+        el.style.display = "flex";
     }
 }
 
-// UZTAISĪT CIKLU KAS ĢENERĒ DIVUS UN FIZZBUZZUS KĀ FUNKCIJU UN TAD IEVIETOT GAN BUTTON.ONCLICK GAN RESTART POGAI.

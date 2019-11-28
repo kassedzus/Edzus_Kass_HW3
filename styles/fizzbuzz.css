@@ -1,42 +1,209 @@
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
+html {
+    background-image: linear-gradient(#00c6ff, #0072ff);
+    min-height: 800px;
+}
+.head {
+    display: flex;
+    color: white;
+    padding: 30px;
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-shadow: 2px 2px 2px gray;
+
+}
+
+#brand {
+    font-size: 12vw;
+    margin: none;
+    display: inline;
+    color: #ffa939;
+    
+}
+
+.numInput {
+    color: white;
+    text-shadow: 2px 2px 2px gray;
+}
+
 #warning {
     color: red;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.alldivs {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 3px 3px 5px gray;
+    
+}
+
+.range {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .fizz {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    text-align: center;
-    ;
+    background-image: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(241,232,217,1) 56%, rgba(255,140,0,1) 100%);
+    border: 2px solid gray;
+
 }
 
 .buzz {
-    width: 100px;
-    height: 100px;
-    background-color: seagreen;
+    background-image: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(212,226,216,1) 56%, rgba(100,145,99,1) 100%);
+    border: 2px solid gray;
 }
 
 .fizzbuzz {
-    width: 100px;
-    height: 100px;
-    background-color: skyblue;
+    background-image: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(232,212,209,1) 56%, rgba(255,55,0,1) 100%);
+    border: 2px solid gray;
 }
 
 .number {
+    background-image: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(228,228,228,1) 100%);
+    border: 2px solid gray;
+}
+
+#rangeBtn {
+    display: block;
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
+}
+
+input {
     width: 100px;
-    height: 100px;
-    background-color: lightgray;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.values {
+    display: block
+    /* flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#btn1, #btn2, #btn3, #btn4, #btn5 {
+    width: 110px;
+    background-color: white;
+    border-radius: 100px;
+    color: rgba(255,140,0,1);
+    font-size: 14px;
+    font-family: Helvetica Neue;
+    font-weight: 900;
+    padding: 5px;
+    border: 4px solid rgba(255,140,0,1);
+}
+
+#btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover {
+    background-color: rgba(255,140,0,1);
+    color: white;
+    border: 4px solid white;
+    cursor: pointer;
+}
+
+#generate {
+    background-color: rgba(255,140,0,1);
+    border-radius: 100px;
+    color: white;
+    font-size: 16px;
+    font-family: Helvetica Neue;
+    font-weight: 900;
+    padding: 10px;
+    border: 4px solid white;
+    justify-items: center;
+}
+
+#generate:hover {
+    background-color: white;
+    color: rgba(255,140,0,1);
+    border: 4px solid rgba(255,140,0,1);
+    cursor: pointer;
+}
+
+.generateBtn {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
 }
 
 #fizzbuzz-cont {
-    background-color: sandybrown;
     display: flex;
     flex-wrap: wrap;
     margin-right: auto;
     margin-left: auto;
     justify-content: center;
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+.main-cont {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 10px;
+}
+
+footer {
+    color: white;
+    grid-column: 1/3;
+    text-align: center;
+}
+
+@media screen and (max-width: 576px) {
+    .main-cont {
+        display: block;
+    }
+    .values {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: left;
+    }
+    #rangeBtn {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .generateBtn {
+        margin-top: 20px;
+    }
+    
 }
