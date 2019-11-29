@@ -165,6 +165,7 @@ input {
     margin-right: auto;
     margin-left: auto;
     justify-content: center;
+    align-content: flex-start;
     grid-column: 2/3;
     grid-row: 1/3;
 }
