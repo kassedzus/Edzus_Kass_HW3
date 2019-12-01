@@ -36,12 +36,13 @@ function genDivs() {
 
         const numDiv = document.createElement("div")
 
-        if (sN < fN || sN > 100 || fN <= 0 || sN <= 0) {
+        if (fN > sN || sN > 100 || fN <= 0 || sN <= 0) {
             // WARNING MESSAGE
+            console.log("invalid number");
             const warning = document.createElement("p");
             warning.setAttribute("id", "warning");
             warning.innerText = "Warning! Number range must be between 1 and 100. Second number can't be smaller than first number";
-            warningMsg.appendChild(warning);
+            container.appendChild(warning);
             break;
         } else if (i % fV == 0 && i % bV == 0) {
             container.appendChild(numDiv);
@@ -71,7 +72,9 @@ gen.onclick = () => {
     console.log("Generating divs...");
 
     clearCont();
+    console.log("Content cleared");
     genDivs();
+    console.log("Divs generated");
 }
 
 // CLEAR AND RESTART BUTTONS
