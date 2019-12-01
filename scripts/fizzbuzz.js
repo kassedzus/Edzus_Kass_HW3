@@ -125,3 +125,4 @@ fizzbuzzBtn.onclick = () => {
     }
 }
 
+genDivs();

@@ -23,17 +23,26 @@
         <div class="numInput">
             <h3>Enter Your Fizz-Buzz Range Numbers</h3>
             <div class="range" id="rangeBtn">
-                <span>Range START: </span>
-                <input type="number" name="Starting number" id="start-num" value="1"><br>
-                <span>Range END: </span>
-                <input type="number" name="End number" id="end-num" value="100">
+                <div class="range1">
+                    <span>Range START: </span><br>
+                    <input type="number" name="Starting number" id="start-num" value="1"><br>
+                </div>
+                <div class="range2">
+                    <span>Range END: </span><br>
+                    <input type="number" name="End number" id="end-num" value="100">
+                </div>
             </div>
             <h3>Enter Your Custom FIZZ and BUZZ values</h3>
             <div class="values">
-                <span>FIZZ Value: </span>
-                <input type="number" id="fizz-value" value="3"><br>
-                <span>BUZZ Value: </span>
-                <input type="number" id="buzz-value" value="5">
+                <div class="values1">
+                    <span>FIZZ Value: </span><br>
+                    <input type="number" id="fizz-value" value="3"><br>
+                </div>
+                <div class="values2">
+                    <span>BUZZ Value: </span><br>
+                    <input type="number" id="buzz-value" value="5">
+                </div>
+
             </div>
             <div class="generateBtn">
                 <button id="generate">GENERATE</button>
@@ -45,6 +54,7 @@
         <div class="buttons">
             <button id="btn1">CLEAR</button><br>
             <button id="btn2">RESTART</button><br>
+            <h3 id="filter-text">Filter only:</h3><br>
             <button id="btn3">FIZZ</button><br>
             <button id="btn4">BUZZ</button><br>
             <button id="btn5">FIZZ-BUZZ</button><br>
